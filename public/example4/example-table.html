@@ -4,7 +4,7 @@
 			{{h.title}}
 		</th>
 	</tr>
-	<tr ng-repeat="item in $ctrl.data | orderBy: 'price'">
+	<tr ng-repeat="item in $ctrl.data">
 		<td ng-repeat="h in $ctrl.headers">
 			{{item[h.id]}}
 		</td>
