@@ -1,0 +1,12 @@
+<table class="table" id="example-table">
+	<tr>
+		<th ng-repeat="h in $ctrl.headers">
+			{{h.title}}
+		</th>
+	</tr>
+	<tr ng-repeat="item in $ctrl.data | orderBy: 'price'">
+		<td ng-repeat="h in $ctrl.headers">
+			{{item[h.id]}}
+		</td>
+	</tr>
+</table>

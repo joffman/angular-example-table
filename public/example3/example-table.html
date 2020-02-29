@@ -1,0 +1,8 @@
+<table class="table">
+	<tr><th>Name</th><th>Category</th><th>Price</th></tr>
+	<tr ng-repeat="prod in $ctrl.products | orderBy: 'price'">
+		<td>{{prod.name}}</td>
+		<td>{{prod.category}}</td>
+		<td>{{prod.price}}</td>
+	</tr>
+</table>

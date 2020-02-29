@@ -1,0 +1,29 @@
+<style>
+
+#example-table th {
+	font-family: monospace;
+}
+
+</style>
+
+<table class="table" id="example-table">
+	<tr>
+		<th ng-repeat="h in $ctrl.headers">
+			<button ng-click="$ctrl.toggleOrderBy(h.id)">
+				{{h.title}}
+				<span ng-if="h.id == $ctrl.orderById">
+					<span ng-if="$ctrl.ascending"> - A</span>
+					<span ng-if="!$ctrl.ascending"> - V</span>
+				</span>
+				<span ng-if="h.id != $ctrl.orderById">
+					<span>&nbsp;&nbsp;&nbsp;</span>
+				</span>
+			</button>
+		</th>
+	</tr>
+	<tr ng-repeat="item in $ctrl.data | orderBy: $ctrl.orderByValue">
+		<td ng-repeat="h in $ctrl.headers">
+			{{item[h.id]}}
+		</td>
+	</tr>
+</table>
